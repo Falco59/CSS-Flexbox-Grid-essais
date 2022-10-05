@@ -13,7 +13,7 @@
 
     margin: 0;
     padding: 0;
-    border: 2px rgb(0, 60, 255) solid;
+    border: 2px rgb(255, 0, 0) solid;
     /*force la marge et le padding pour tous les éléments * correspond a ALL */
 }
 
