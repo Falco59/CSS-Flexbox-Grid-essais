@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+/*Import police google font*/
+
+@font-face {
+    font-family: "font-1";
+    src: url(./assets/Rubik-Regular.ttf);
+}
+
+/*import police telechargement*/
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    border: 2px red solid;
+    /*force la marge et le padding pour tous les éléments * correspond a ALL */
+}
+
+body {
+
+    background: url(./assets/bg.jpg) no-repeat fixed center/cover;
+    /*centrer couvre tout*/
+
+
+
+}
+
+h1 {
+    text-transform: uppercase;
+    /*Mettre en majuscule*/
+    letter-spacing: 1px;
+    /*Espacement des lettres*/
+    font-size: 2rem;
+    /* Taille de police (parler en rem)*/
+    color: darkblue;
+    text-shadow: 7px 9px 7px rgb(0, 0, 0);
+    text-align: center;
+    font-family: "font-1";
+
+}
+
+main {
+
+    background: whitesmoke;
+    width: 90%;
+    /*Largeur*/
+    min-height: 500px;
+    /*Hauteur minimale*/
+    margin: 10px auto;
+    /*Haut droite bas gauche marge de la boite*/
+    padding: 15px;
+    /*Marge intérieur*/
+    border-radius: 50px;
+    /*arrondir les bords*/
+    box-shadow: 6px 10px 20px black;
+
+}
+
+.position,
+.flexbox,
+.grid {
+
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 50px;
+    position: relative;
+
+}
+
+#circle {
+
+    height: 60px;
+    width: 60px;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: 110px;
+    box-shadow: 0 2px 12px 5px black;
+    z-index: 2;
+    /* Priorité de positionnement*/
+}
+
+#rectangle {
+
+    height: 15px;
+    width: 100px;
+    background: slateblue;
+    padding: 20px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*Pour centrer parfaitement*/
+}
+
+ul {
+
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+
+li {
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: turquoise;
+    /*CENTRER VERTICALEMENT*/
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+/******************* GRID *********************/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+.img {
+    text-align: center;
+}
+
+form {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "i1 i2"
+        "ta ta"
+        "bt bt";
+}
+
+input,
+textarea {
+    margin: 5px;
+    height: 45px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: "font-1";
+
+}
+
+#firstname {
+    grid-area: i1;
+}
+
+#surname {
+    grid-area: i2;
+}
+
+textarea {
+    grid-area: ta;
+    resize: none;
+
+}
+
+input[type="submit"] {
+    grid-area: bt;
+    cursor: pointer;
+    background-color: cyan;
+    transition: 0.4s;
+}
+
+input[type="submit"]:hover {
+    background-color: darkblue;
+    color: white;
+
+}
+
+/*********************RESPONSIVE**************/
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    form {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "i1"
+            "i2"
+            "ta"
+            "bt";
+    
+    }
+}
